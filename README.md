@@ -83,8 +83,8 @@ npx wrangler login
 npx wrangler pages deploy dist --project-name nexus-agent
 ```
 
-### Option C: Automated GitHub Actions
-The repository includes [`.github/workflows/cloudflare-pages.yml`](.github/workflows/cloudflare-pages.yml). Simply add `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` in your GitHub Repository Secrets.
+### Option C: Automated CI/CD
+The repository includes [`deploy/cloudflare-pages.yml`](deploy/cloudflare-pages.yml). If you add workflow permissions to your token or configure GitHub Actions, simply place it into `.github/workflows/cloudflare-pages.yml` with `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` in your GitHub Repository Secrets.
 
 ---
 
