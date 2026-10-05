@@ -2,15 +2,18 @@ import React, { useState } from 'react'
 import { Navbar } from './components/Navbar.tsx'
 import { BackgroundCanvas } from './components/BackgroundCanvas.tsx'
 import { Hero } from './components/Hero.tsx'
+import { Simulation3DSection } from './components/Simulation3DSection.tsx'
 import { AgentPlayground } from './components/AgentPlayground.tsx'
 import { FeatureMatrix } from './components/FeatureMatrix.tsx'
 import { ArchitectureView } from './components/ArchitectureView.tsx'
 import { DownloadSection } from './components/DownloadSection.tsx'
 import { Footer } from './components/Footer.tsx'
 import { DocsModal } from './components/DocsModal.tsx'
+import { AuthBridgeModal } from './components/AuthBridgeModal.tsx'
 
 export default function App() {
   const [docsModalOpen, setDocsModalOpen] = useState(false)
+  const [authBridgeModalOpen, setAuthBridgeModalOpen] = useState(false)
 
   const scrollToSimulator = () => {
     const el = document.getElementById('simulator')
@@ -28,6 +31,7 @@ export default function App() {
       <Navbar
         onOpenDocs={() => setDocsModalOpen(true)}
         onScrollToSimulator={scrollToSimulator}
+        onOpenAuthBridge={() => setAuthBridgeModalOpen(true)}
       />
 
       {/* Main Content Sections */}
@@ -35,7 +39,9 @@ export default function App() {
         <Hero
           onScrollToSimulator={scrollToSimulator}
           onOpenDocs={() => setDocsModalOpen(true)}
+          onOpenAuthBridge={() => setAuthBridgeModalOpen(true)}
         />
+        <Simulation3DSection />
         <AgentPlayground />
         <FeatureMatrix />
         <ArchitectureView />
@@ -50,6 +56,13 @@ export default function App() {
         isOpen={docsModalOpen}
         onClose={() => setDocsModalOpen(false)}
       />
+
+      {/* Web-to-Desktop Authentication & Bridge Modal */}
+      <AuthBridgeModal
+        isOpen={authBridgeModalOpen}
+        onClose={() => setAuthBridgeModalOpen(false)}
+      />
     </div>
   )
 }
+

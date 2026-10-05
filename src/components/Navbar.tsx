@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { Terminal, Github, Cpu, Download, BookOpen, Sparkles, Menu, X } from 'lucide-react'
+import { Terminal, Github, Cpu, Download, BookOpen, Sparkles, Menu, X, Key, ShieldCheck } from 'lucide-react'
 
 interface NavbarProps {
   onOpenDocs: () => void
   onScrollToSimulator: () => void
+  onOpenAuthBridge: () => void
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenDocs, onScrollToSimulator }) => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenDocs, onScrollToSimulator, onOpenAuthBridge }) => {
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
@@ -87,6 +88,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDocs, onScrollToSimulator 
               <span>CORE ACTIVE</span>
             </div>
 
+            {/* Web Bridge & Auth Button */}
+            <button
+              onClick={onOpenAuthBridge}
+              className="flex items-center gap-1.5 px-3.5 py-2 rounded-xl bg-cyan-950/40 hover:bg-cyan-900/60 border border-cyan-500/40 text-sm font-semibold text-cyan-300 transition-all shadow-sm shadow-cyan-950/40"
+            >
+              <Key className="w-4 h-4 text-cyan-400" />
+              <span>Web Bridge</span>
+            </button>
+
             {/* GitHub Repo Link */}
             <a
               href="https://github.com/NiranX-music/Nexus-Agent"
@@ -165,6 +175,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenDocs, onScrollToSimulator 
           >
             Downloads
           </a>
+          <button
+            onClick={() => {
+              onOpenAuthBridge()
+              setMobileMenuOpen(false)
+            }}
+            className="w-full text-left py-2 text-cyan-300 font-medium flex items-center gap-2"
+          >
+            <Key className="w-4 h-4" /> Web Bridge & Authentication
+          </button>
           <div className="pt-2 flex flex-col gap-2">
             <a
               href="https://github.com/NiranX-music/Nexus-Agent"

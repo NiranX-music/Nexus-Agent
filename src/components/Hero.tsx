@@ -9,16 +9,18 @@ import {
   Layers,
   ShieldCheck,
   Zap,
-  ArrowRight,
-  Sparkles
+  Sparkles,
+  Key,
+  ArrowRight
 } from 'lucide-react'
 
 interface HeroProps {
   onScrollToSimulator: () => void
   onOpenDocs: () => void
+  onOpenAuthBridge: () => void
 }
 
-export const Hero: React.FC<HeroProps> = ({ onScrollToSimulator, onOpenDocs }) => {
+export const Hero: React.FC<HeroProps> = ({ onScrollToSimulator, onOpenDocs, onOpenAuthBridge }) => {
   const [activeVoicePrompt, setActiveVoicePrompt] = useState(
     'Hey Nexus, organize my dual displays, start 45m deep focus, and forge a slide deck on Quantum Computing.'
   )
@@ -74,6 +76,14 @@ export const Hero: React.FC<HeroProps> = ({ onScrollToSimulator, onOpenDocs }) =
               <Download className="w-5 h-5 text-cyan-400" />
               <span>Download Desktop Client</span>
             </a>
+
+            <button
+              onClick={onOpenAuthBridge}
+              className="px-6 py-3.5 rounded-2xl bg-cyan-950/60 hover:bg-cyan-900/60 border border-cyan-500/50 text-cyan-300 font-bold text-base transition-all flex items-center gap-2 shadow-lg shadow-cyan-950/40"
+            >
+              <Key className="w-5 h-5 text-cyan-400" />
+              <span>Pair Desktop App (Bridge)</span>
+            </button>
 
             <a
               href="https://github.com/NiranX-music/Nexus-Agent"
