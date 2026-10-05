@@ -1,0 +1,55 @@
+import React, { useState } from 'react'
+import { Navbar } from './components/Navbar.tsx'
+import { BackgroundCanvas } from './components/BackgroundCanvas.tsx'
+import { Hero } from './components/Hero.tsx'
+import { AgentPlayground } from './components/AgentPlayground.tsx'
+import { FeatureMatrix } from './components/FeatureMatrix.tsx'
+import { ArchitectureView } from './components/ArchitectureView.tsx'
+import { DownloadSection } from './components/DownloadSection.tsx'
+import { Footer } from './components/Footer.tsx'
+import { DocsModal } from './components/DocsModal.tsx'
+
+export default function App() {
+  const [docsModalOpen, setDocsModalOpen] = useState(false)
+
+  const scrollToSimulator = () => {
+    const el = document.getElementById('simulator')
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  return (
+    <div className="min-h-screen bg-[#030712] text-slate-100 relative selection:bg-cyan-500/30 selection:text-cyan-200">
+      {/* Background Interactive Particles Canvas */}
+      <BackgroundCanvas />
+
+      {/* Navigation Header */}
+      <Navbar
+        onOpenDocs={() => setDocsModalOpen(true)}
+        onScrollToSimulator={scrollToSimulator}
+      />
+
+      {/* Main Content Sections */}
+      <main className="relative z-10">
+        <Hero
+          onScrollToSimulator={scrollToSimulator}
+          onOpenDocs={() => setDocsModalOpen(true)}
+        />
+        <AgentPlayground />
+        <FeatureMatrix />
+        <ArchitectureView />
+        <DownloadSection />
+      </main>
+
+      {/* Footer */}
+      <Footer />
+
+      {/* Interactive Docs Command Reference Modal */}
+      <DocsModal
+        isOpen={docsModalOpen}
+        onClose={() => setDocsModalOpen(false)}
+      />
+    </div>
+  )
+}
