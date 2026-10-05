@@ -23,7 +23,7 @@ interface AuthBridgeModalProps {
 
 export const AuthBridgeModal: React.FC<AuthBridgeModalProps> = ({ isOpen, onClose }) => {
   const DEFAULT_KEY =
-    (import.meta.env.VITE_NEXUS_API_KEY as string) ||
+    ((import.meta as any).env?.VITE_NEXUS_API_KEY as string) ||
     (typeof window !== 'undefined' ? localStorage.getItem('nexus_agent_api_key') : '') ||
     ''
 
