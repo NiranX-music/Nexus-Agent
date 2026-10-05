@@ -51,15 +51,34 @@ export const DownloadSection: React.FC = () => {
 
             <div className="mt-6 pt-4 border-t border-white/5 space-y-2">
               <a
-                href="https://github.com/NiranX-music/Nexus-Agent/releases"
+                href="https://github.com/NiranX-music/Nexus-desktop-/releases/download/v2.1.1/nexus-ai-2.1.1-setup.exe"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-2.5 rounded-xl bg-gradient-to-r from-cyan-400 to-sky-400 text-slate-950 font-bold text-xs flex items-center justify-center gap-2 hover:opacity-95 transition-opacity"
               >
                 <Download className="w-4 h-4" />
-                <span>Download Windows (.exe)</span>
+                <span>Download Windows Installer (.exe)</span>
               </a>
-              <span className="text-[10px] font-mono text-slate-500 block text-center">SHA256: 7fbc...492e</span>
+              <div className="flex items-center justify-between text-[11px] font-mono text-cyan-400 pt-1">
+                <a
+                  href="https://github.com/NiranX-music/Nexus-desktop-/releases/download/v2.1.1/Nexus.AI.2.1.1.exe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Portable .exe
+                </a>
+                <span>•</span>
+                <a
+                  href="https://github.com/NiranX-music/Nexus-desktop-/releases/download/v2.1.1/Nexus-AI-2.1.1-Direct-Run.zip"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:underline"
+                >
+                  Direct-Run .zip
+                </a>
+              </div>
+              <span className="text-[10px] font-mono text-slate-500 block text-center">Version 2.1.1 Production Release</span>
             </div>
           </div>
 
@@ -79,7 +98,7 @@ export const DownloadSection: React.FC = () => {
 
             <div className="mt-6 pt-4 border-t border-white/5 space-y-2">
               <a
-                href="https://github.com/NiranX-music/Nexus-Agent/releases"
+                href="https://github.com/NiranX-music/Nexus-desktop-/releases/tag/v2.1.1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors border border-slate-700"
@@ -107,7 +126,7 @@ export const DownloadSection: React.FC = () => {
 
             <div className="mt-6 pt-4 border-t border-white/5 space-y-2">
               <a
-                href="https://github.com/NiranX-music/Nexus-Agent/releases"
+                href="https://github.com/NiranX-music/Nexus-desktop-/releases/tag/v2.1.1"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs flex items-center justify-center gap-2 transition-colors border border-slate-700"
