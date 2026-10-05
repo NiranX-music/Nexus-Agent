@@ -130,9 +130,9 @@ export const AuthBridgeModal: React.FC<AuthBridgeModalProps> = ({ isOpen, onClos
     setTestResponse(null)
 
     try {
-      // Direct call to Gemini 2.5 Flash API endpoint with the key
+      // Direct call to Gemini 3.8 Flash API endpoint with the key
       const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${encodeURIComponent(apiKey)}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent?key=${encodeURIComponent(apiKey)}`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -408,7 +408,7 @@ export const AuthBridgeModal: React.FC<AuthBridgeModalProps> = ({ isOpen, onClos
                   <span className="text-xs font-mono text-sky-400 font-bold uppercase tracking-wider">
                     TEST AGENT REASONING IN WEB SIMULATOR
                   </span>
-                  <span className="text-[10px] font-mono text-slate-400">Model: Gemini 2.5 Flash</span>
+                  <span className="text-[10px] font-mono text-slate-400">Model: Gemini 3.8 Flash</span>
                 </div>
 
                 <textarea
